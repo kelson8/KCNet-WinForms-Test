@@ -112,5 +112,10 @@ namespace KCNet_WinForms_Test
             FileNameTextBox.Text = "";
             Sha256SumLabel.Text = "";
         }
+
+        private void DoesFileExistLabelYN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
