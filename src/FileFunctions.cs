@@ -19,12 +19,18 @@ namespace FileFunctions
         /// <returns></returns>
         public static bool CheckIfFileExists(string filePath, string fileName)
         {
-            if (File.Exists(filePath + fileName))
-            {
-                return true;
-            }
+            string fullPath = Path.Combine(filePath, fileName);
 
-            return false;
+            //if (File.Exists(filePath + fileName))
+            if (File.Exists(fullPath))
+            {
+                Console.WriteLine($"{filePath} {fileName}");
+                return true;
+            } else
+            {
+                Console.WriteLine($"{filePath} {fileName}");
+                return false;
+            }
         }
     }
 }

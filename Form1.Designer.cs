@@ -40,6 +40,7 @@
             DoesFileExistLabel = new Label();
             DoesFileExistLabelYN = new Label();
             label1 = new Label();
+            ResetValuesButton = new Button();
             SuspendLayout();
             // 
             // FilePathTextBox
@@ -152,11 +153,22 @@
             label1.Text = "This works if I type \"./\" for the directory instead of the full path, I need to fix that\r\n";
             label1.Click += label1_Click_2;
             // 
+            // ResetValuesButton
+            // 
+            ResetValuesButton.Location = new Point(203, 181);
+            ResetValuesButton.Name = "ResetValuesButton";
+            ResetValuesButton.Size = new Size(99, 23);
+            ResetValuesButton.TabIndex = 12;
+            ResetValuesButton.Text = "Reset Values";
+            ResetValuesButton.UseVisualStyleBackColor = true;
+            ResetValuesButton.Click += ResetValuesButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ResetValuesButton);
             Controls.Add(label1);
             Controls.Add(DoesFileExistLabelYN);
             Controls.Add(DoesFileExistLabel);
@@ -189,5 +201,6 @@
         private Label DoesFileExistLabel;
         private Label DoesFileExistLabelYN;
         private Label label1;
+        private Button ResetValuesButton;
     }
 }

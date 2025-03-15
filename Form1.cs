@@ -17,22 +17,32 @@ namespace KCNet_WinForms_Test
         }
 
         // Submit button
+        // TODO Make this work on other directories, it only works on "./"
         private void button1_Click(object sender, EventArgs e)
         {
-            string filePath = FilePathTextBox.Text;
+            string filePath = FilePathTextBox.Text + "\\";
             string fileName = FileNameTextBox.Text;
 
-            string fileHash = HashFunctions.GetChecksumFile(filePath, fileName);
+
+            if (filePath != null && fileName != null)
+            {
+                string fileHash = HashFunctions.GetChecksumFile(filePath, fileName);
 
 
-            // Combine the filePath and fileName to check it
-            string fullPath = Path.Combine(filePath, fileName);
-            MessageBox.Show($"Trying to access {fullPath}");
+                // Combine the filePath and fileName to check it
+                //string fullPath = Path.Combine(filePath, fileName);
+                //MessageBox.Show($"Trying to access {fullPath}");
 
 
-            // TODO Make this work properly if the file isn't found, instead of displaying "SHA256 of file"
-            Sha256SumLabel.Text = $"SHA256 of file {filePath}\\{fileName}: {fileHash}";
-            //Sha256SumLabel.Text = $"File path: {filePath} File name: {fileName}";
+                // TODO Make this work properly if the file isn't found, instead of displaying "SHA256 of file"
+                //Sha256SumLabel.Text = $"SHA256 of file {filePath}{fileName}: {fileHash}";
+                Sha256SumLabel.Text = $"SHA256 of file {fileName}: {fileHash}";
+
+                //Sha256SumLabel.Text = $"File path: {filePath} File name: {fileName}";
+            }
+
+
+
         }
 
         private void OpenFileButton_Click(object sender, EventArgs e)
@@ -81,6 +91,19 @@ namespace KCNet_WinForms_Test
         private void label1_Click_2(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Reset all values back to nothing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ResetValuesButton_Click(object sender, EventArgs e)
+        {
+            DoesFileExistLabelYN.Text = "";
+            FilePathTextBox.Text = "";
+            FileNameTextBox.Text = "";
+            Sha256SumLabel.Text = "";
         }
     }
 }
