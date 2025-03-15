@@ -3,6 +3,14 @@ using System.Runtime.InteropServices.ObjectiveC;
 
 namespace KCNet_WinForms_Test
 {
+    // Well I figured out how to remove the extra events
+    // without deleting the label or whatever is being removed.
+
+    // 1. Open the Form1.cs designer.
+    // 2. Click on the item to remove an event from, press F4 on it to bring up the properties window.
+    // 3. Click on the lighting bolt to bring up the events, and remove the value from the 'Click' event.
+    // 4. Remove the function in Form1.cs (This code file)
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -10,14 +18,11 @@ namespace KCNet_WinForms_Test
             InitializeComponent();
         }
 
-        // This was a test.
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // Submit button
-        // TODO Make this work on other directories, it only works on "./"
+        /// <summary>
+        /// Submit button, puts the SHA256 hash below
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             string filePath = FilePathTextBox.Text + "\\";
@@ -45,6 +50,11 @@ namespace KCNet_WinForms_Test
 
         }
 
+        /// <summary>
+        /// Open a file dialog
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
             // Add a open file dialog
@@ -63,6 +73,11 @@ namespace KCNet_WinForms_Test
             }
         }
 
+        /// <summary>
+        /// Check if the file exists
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DoesFileExistButton_Click(object sender, EventArgs e)
         {
             string filePath = FilePathTextBox.Text;
@@ -79,17 +94,6 @@ namespace KCNet_WinForms_Test
                     DoesFileExistLabelYN.Text = $"File {fileName} doesn't exist.";
                 }
             }
-
-        }
-
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
 
         }
 

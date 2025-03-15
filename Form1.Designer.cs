@@ -39,7 +39,6 @@
             DoesFileExistButton = new Button();
             DoesFileExistLabel = new Label();
             DoesFileExistLabelYN = new Label();
-            label1 = new Label();
             ResetValuesButton = new Button();
             SuspendLayout();
             // 
@@ -65,7 +64,6 @@
             FilePathLabel.Size = new Size(52, 15);
             FilePathLabel.TabIndex = 2;
             FilePathLabel.Text = "File Path";
-            FilePathLabel.Click += label1_Click;
             // 
             // label2
             // 
@@ -132,7 +130,6 @@
             DoesFileExistLabel.Size = new Size(85, 15);
             DoesFileExistLabel.TabIndex = 9;
             DoesFileExistLabel.Text = "Does File Exist?";
-            DoesFileExistLabel.Click += label1_Click_1;
             // 
             // DoesFileExistLabelYN
             // 
@@ -142,16 +139,6 @@
             DoesFileExistLabelYN.Size = new Size(45, 15);
             DoesFileExistLabelYN.TabIndex = 10;
             DoesFileExistLabelYN.Text = "Yes/No";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(427, 15);
-            label1.TabIndex = 11;
-            label1.Text = "This works if I type \"./\" for the directory instead of the full path, I need to fix that\r\n";
-            label1.Click += label1_Click_2;
             // 
             // ResetValuesButton
             // 
@@ -169,7 +156,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(ResetValuesButton);
-            Controls.Add(label1);
             Controls.Add(DoesFileExistLabelYN);
             Controls.Add(DoesFileExistLabel);
             Controls.Add(DoesFileExistButton);
@@ -200,7 +186,6 @@
         private Button DoesFileExistButton;
         private Label DoesFileExistLabel;
         private Label DoesFileExistLabelYN;
-        private Label label1;
         private Button ResetValuesButton;
     }
 }
