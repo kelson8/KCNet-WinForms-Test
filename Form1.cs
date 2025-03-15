@@ -16,6 +16,9 @@ namespace KCNet_WinForms_Test
         public Form1()
         {
             InitializeComponent();
+            // Well I set the window title in the designer, not sure where it goes in the code.
+            //Form1 form = new Form1();
+            //form.Text = "KCNet Test";
         }
 
         /// <summary>

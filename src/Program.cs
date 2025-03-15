@@ -12,6 +12,12 @@ namespace KCNet_WinForms_Test.src
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+
+
+            // Well I set the window title in the designer, not sure where it goes in the code.
+            // https://stackoverflow.com/a/6970358
+
+            // https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
         }
     }
 }

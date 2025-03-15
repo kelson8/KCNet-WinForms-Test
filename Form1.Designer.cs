@@ -168,7 +168,7 @@
             Controls.Add(FileNameTextBox);
             Controls.Add(FilePathTextBox);
             Name = "Form1";
-            Text = "Form1";
+            Text = "KCNet WinForms Test";
             ResumeLayout(false);
             PerformLayout();
         }
