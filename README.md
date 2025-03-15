@@ -6,9 +6,46 @@ Because that repo is mostly for my local gitea that isn't accessable from outsid
 It is just a test for downloading files from my gitea releases.
 
 # Features
-So far you can check a SHA256 hash of a file in the current directory by specifying "./" as the filePath, and the fileName.
+This has a file dialog that opens up, and you can view the SHA256 sum of any file using it, I need to add a option to copy that SHA256 hash later.
 
-Place the file in bin/Debug/net8.0-windows, then this should work on it.
+There is a reset values option which sets the options back to default which is nothing.
+
+# Screenshots
+Here are some images of what this test does
+
+<details>
+<summary> Starting Page </summary>
+<img src=screenshots/First_Page.png?raw=true>
+</details>
+
+<details>
+<summary> Sha256 Sum </summary>
+<img src=screenshots/First_Page_Sha256Sum.png?raw=true>
+</details>
+
+<details>
+<summary> File Exist Check </summary>
+<img src=screenshots/First_Page_FileExistCheck.png?raw=true>
+</details>
+
+<details>
+<summary> Values without sha256 sum  </summary>
+<img src=/screenshots/First_Page_Values.png?raw=true>
+</details>
+
+<details>
+<summary> File Dialog Blank </summary>
+<img src=screenshots/File_Dialog_Blank.png?raw=true>
+</details>
+
+<details>
+<summary> File Dialog With File </summary>
+<img src=screenshots/File_Dialog_With_File.png?raw=true>
+</details>
+
+
+
+
 
 # License
 This project is Licensed under the MIT license, feel free to use it however you want.

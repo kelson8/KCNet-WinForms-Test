@@ -1,0 +1,80 @@
+{$CLEO .cs}
+
+script_name 'TPIN'
+5@ = 0
+
+:TPIN_18
+wait 0
+if 
+  is_player_playing $PLAYER_CHAR
+goto_if_false @TPIN_18
+if 
+  can_player_start_mission $PLAYER_CHAR
+goto_if_false @TPIN_18
+if 
+  is_key_pressed 89
+goto_if_false @TPIN_83
+5@ = 1
+TIMERB = 0
+
+:TPIN_83
+if and
+  5@ == 1
+  is_key_pressed 88
+goto_if_false @TPIN_119
+5@ = 0
+goto @TPIN_170
+
+:TPIN_119
+if 
+  5@ == 1
+goto_if_false @TPIN_18
+if 
+  TIMERB > 5000
+goto_if_false @TPIN_18
+5@ = 0
+goto @TPIN_18
+
+:TPIN_170
+get_char_heading $PLAYER_ACTOR store_to 4@
+  get_target_blip_coords 0@ 1@ 2@
+set_fading_colour 0 0 0
+do_fade 500 fade 0
+wait 500
+set_player_control $PLAYER_CHAR to 0
+set_area_visible 0
+clear_extra_colours 0
+set_player_is_in_stadium 0
+request_collision 0@ 1@
+load_scene 0@ 1@ 2@
+if 
+  is_player_playing $PLAYER_CHAR
+goto_if_false @TPIN_294
+set_char_area_visible $PLAYER_ACTOR to 0
+set_char_coordinates $PLAYER_ACTOR to 0@ 1@ -100.0
+set_char_heading $PLAYER_ACTOR to 4@
+
+:TPIN_294
+wait 0
+if 
+  is_player_playing $PLAYER_CHAR
+goto_if_false @TPIN_294
+wait 1500
+do_fade 1000 fade 1
+
+:TPIN_326
+if 
+  get_fading_status 
+goto_if_false @TPIN_350
+wait 0
+goto @TPIN_326
+
+:TPIN_350
+wait 0
+if 
+  is_player_playing $PLAYER_CHAR
+goto_if_false @TPIN_350
+set_player_control $PLAYER_CHAR to 1
+set_camera_behind_player 
+restore_camera_jumpcut 
+goto @TPIN_18
